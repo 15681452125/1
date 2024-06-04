@@ -73,7 +73,7 @@ if st.button("开始预测",type="primary"):
             transforms.ToTensor(),
             transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
         ])
-        test_data = datasets.CIFAR100('./100', train=False, download=False, transform=transform)
+        test_data = datasets.CIFAR100('./100', train=False, download=True, transform=transform)
     # 加载保存的模型
         model = Net()
         model.load_state_dict(torch.load('models/model_cifar.pt'))
@@ -115,7 +115,7 @@ if st.button("开始预测",type="primary"):
             transforms.ToTensor(),
             transforms.Normalize((0.5,), (0.5,))
         ])
-        data_test = datasets.CIFAR100(root="./100", transform=transform, train=False, download=False)
+        data_test = datasets.CIFAR100(root="./100", transform=transform, train=False, download=True)
         class_labels = data_test.classes
         # 加载待预测的图片
             # 保存上传的文件到本地
@@ -149,7 +149,7 @@ if st.button("开始预测",type="primary"):
             transforms.ToTensor(),
             transforms.Normalize(mean, std)  # 标准化图像数据
         ])
-        train_data = torchvision.datasets.CIFAR100('./100', train=True, transform=transform, download=False)
+        train_data = torchvision.datasets.CIFAR100('./100', train=True, transform=transform, download=True)
         # 要预测的图像文件
 
         # 加载和预处理图像
