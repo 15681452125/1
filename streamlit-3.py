@@ -16,16 +16,6 @@ from skimage.feature import hog
 from sklearn.feature_selection import SelectKBest,chi2
 
 
-background_css="""
-    <style>
-        body {
-            background-image:url('./1.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
-    """
-
 def unpickle(file):
     with open(file, 'rb') as fo:
         dict = pickle.load(fo, encoding='latin1')
